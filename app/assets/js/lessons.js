@@ -28,7 +28,7 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 	});
 
 	var lessonCompleted = {
-		lesson1Solution: 'setName(\'Your name\')',
+		lesson1Solution: 'definirNome(\'Your name\')',
 		lesson1: function () {
 			return !!data.name;
 		},
@@ -48,7 +48,7 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 			return (typeof output === 'boolean');
 		},
 
-		lesson5Solution: 'bio.replace(/{{ firstEscaped }}/, \'[redacted]\')',
+		lesson5Solution: 'bio.replace(/{{ firstEscaped }}/, \'[censurado]\')',
 		lesson5: function (input, output) {
 			if (!contains(input, 'replace')) {
 				return false;
@@ -85,7 +85,7 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 				($.isArray(output) && output[0] === '345'));
 		},
 
-		lesson8Solution: 'answer(/front-?end/)',
+		lesson8Solution: 'resposta(/front-?end/)',
 		lesson8: function (input) {
 			if (!contains(input, '?')) {
 				return false;
@@ -95,25 +95,25 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 			return (expr.test('frontend') && expr.test('front-end'));
 		},
 
-		lesson9Solution: '/\\(.+\\)/.exec(shortStory)',
+		lesson9Solution: '/\\(.+\\)/.exec(historinha)',
 		lesson9: function (input, output) {
 			if (contains(input, 'regex') || contains(input, '*')) {
 				return false;
 			}
 
-			return (output && output[0] === '(also regex or regexp)');
+			return (output && output[0] === '(também chamada de regex ou regexp)');
 		},
 
-		lesson10Solution: '/\\(.*\\)/.exec(shortStory)',
+		lesson10Solution: '/\\(.*\\)/.exec(historinha)',
 		lesson10: function (input, output) {
 			if (contains(input, 'regex') || contains(input, '+')) {
 				return false;
 			}
 
-			return (output && output[0] === '(also regex or regexp)');
+			return (output && output[0] === '(também chamada de regex ou regexp)');
 		},
 
-		lesson11Solution: 'bracketNumbers.match(/\\(.{5,8}\\)/)',
+		lesson11Solution: 'numerosParenteses.match(/\\(.{5,8}\\)/)',
 		lesson11: function (input, output) {
 			if (contains(input, '34')) {
 				return false;
@@ -122,27 +122,27 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 			return (output && output[0] === '(123456)');
 		},
 
-		lesson12Solution: 'answer(/a{0,1}b{1,}c{0,}/)',
+		lesson12Solution: 'resposta(/a{0,1}b{1,}c{0,}/)',
 		lesson12: function () {
 			return (data.lastAnswer.toString() === '/a{0,1}b{1,}c{0,}/');
 		},
 
-		lesson13Solution: '/CAT/i.exec(\'Category\')',
+		lesson13Solution: '/CAT/i.exec(\'Categoria\')',
 		lesson13: function (input) {
 			return contains(input.toLowerCase(), '/cat/i');
 		},
 
-		lesson14Solution: 'shortStory.replace(/a/g, \'e\')',
+		lesson14Solution: 'historinha.replace(/a/g, \'e\')',
 		lesson14: function (input, output) {
 			if (!contains(input, 'replace')) {
 				return false;
 			}
 
-			var expected = window.shortStory.replace(/a/g, 'e');
+			var expected = window.historinha.replace(/a/g, 'e');
 			return output.slice(1) === expected.slice(1); // Ignore first char
 		},
 
-		lesson15Solution: '/[a-z\\-]{5,12}/i.test(username)',
+		lesson15Solution: '/[a-z\\-]{5,12}/i.test(usuario)',
 		lesson15: function (input, output) {
 			if (output !== true) {
 				return false;
@@ -154,22 +154,22 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 				return false;
 			}
 
-			var result = regex.exec('BobbyTables');
-			if (result === null || result[0] !== 'BobbyTables') {
+			var result = regex.exec('BetinhoTabelas');
+			if (result === null || result[0] !== 'BetinhoTabelas') {
 				return false;
 			}
 
-			result = regex.exec('Bobby-Tables');
-			if (result === null || result[0] !== 'Bobby-Tables') {
+			result = regex.exec('Betinho-Tabelas');
+			if (result === null || result[0] !== 'Betinho-Tabelas') {
 				return false;
 			}
 
-			result = regex.exec('Bobby');
-			if (result === null || result[0] !== 'Bobby') {
+			result = regex.exec('Betinho');
+			if (result === null || result[0] !== 'Betinho') {
 				return false;
 			}
 
-			if (regex.test('B0bby')) {
+			if (regex.test('Betinh0')) {
 				return false;
 			}
 
@@ -180,7 +180,7 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 			return true;
 		},
 
-		lesson16Solution: '/[^ ]{5,12}/i.test(username)',
+		lesson16Solution: '/[^ ]{5,12}/i.test(usuario)',
 		lesson16: function (input, output) {
 			if (output !== true) {
 				return false;
@@ -192,13 +192,13 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 				return false;
 			}
 
-			var result = regex.exec('Bobby-Tables');
-			if (result === null || result[0] !== 'Bobby-Tables') {
+			var result = regex.exec('Betinho-Tabelas');
+			if (result === null || result[0] !== 'Betinho-Tabelas') {
 				return false;
 			}
 
-			result = regex.exec('B0bby');
-			if (result === null || result[0] !== 'B0bby') {
+			result = regex.exec('Betinh0');
+			if (result === null || result[0] !== 'Betinh0') {
 				return false;
 			}
 
@@ -213,26 +213,26 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 			return true;
 		},
 
-		lesson17Solution: '/\\w+\\s\\d+/.exec(charTypeTest)',
+		lesson17Solution: '/\\w+\\s\\d+/.exec(testeDeTipo)',
 		lesson17: function (input) {
 			if (!contains(input, ['\\w', '\\d'])) {
 				return false;
 			}
 
 			var regex = getRegex(input),
-				realOut = regex.exec(window.charTypeTest);
+				realOut = regex.exec(window.testeDeTipo);
 
-			return $.isArray(realOut) && realOut[0] === window.charTypeTest;
+			return $.isArray(realOut) && realOut[0] === window.testeDeTipo;
 		},
 
-		lesson18Solution: '/^https?:\\/\\/[^ ]+$/.test(possibleUrl)',
+		lesson18Solution: '/^https?:\\/\\/[^ ]+$/.test(urlPossivel)',
 		lesson18: function (input, output) {
 			if (contains(input, 'test') && output !== true) {
 				return false;
 			}
 
 			if ((contains(input, 'exec') || contains(input, 'match')) &&
-				(!$.isArray(output) || output[0] !== window.possibleUrl)) {
+				(!$.isArray(output) || output[0] !== window.urlPossivel)) {
 				return false;
 			}
 
@@ -242,16 +242,16 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 				return false;
 			}
 
-			output = regex.exec(window.possibleUrl);
-			return $.isArray(output) && output[0] === window.possibleUrl;
+			output = regex.exec(window.urlPossivel);
+			return $.isArray(output) && output[0] === window.urlPossivel;
 		},
 
-		lesson19Solution: '/\\((.{5,8})\\)/.exec(shorterStory)',
+		lesson19Solution: '/\\((.{5,8})\\)/.exec(historinhazinha)',
 		lesson19: function (input, output) {
 			return ($.isArray(output) && output[1] === '123456');
 		},
 
-		lesson20Solution: '/\\((?:.{5,8})\\)/.exec(shorterStory)',
+		lesson20Solution: '/\\((?:.{5,8})\\)/.exec(historinhazinha)',
 		lesson20: function (input, output) {
 			if (!contains(input, '(?:')) {
 				return false;
@@ -260,7 +260,7 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 			return ($.isArray(output) && output.length === 1);
 		},
 
-		lesson21Solution: 'answer(/^(?:ha){2,}$/)',
+		lesson21Solution: 'resposta(/^(?:ha){2,}$/)',
 		lesson21: function () {
 			var expr = data.lastAnswer;
 
@@ -269,62 +269,62 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 				!expr.test('hahahah'));
 		},
 
-		lesson22Solution: '/The (dog|cat|rabbit) ate/.exec(rabbit)',
+		lesson22Solution: '/O (cão|gato|coelho) comeu/.exec(coelho)',
 		lesson22: function (input, output) {
-			if (contains(input, ['dog', 'cat', 'rabbit'])) {
+			if (contains(input, ['cão', 'gato', 'coelho'])) {
 				return output === true ||
-					($.isArray(output) && output[1] === 'rabbit');
+					($.isArray(output) && output[1] === 'coelho');
 			}
 
 			return false;
 		},
 
-		lesson23Solution: 'answer(/(\\S+) \\1/)',
+		lesson23Solution: 'resposta(/(\\S+) \\1/)',
 		lesson23: function () {
 			var regex = data.lastAnswer;
 
 			// Everything here should be true
 			return [
-				regex.test('test test'),
-				regex.test('This test test'),
-				!regex.test('hello world hello'),
-				regex.test('hi hi there'),
-				regex.test('this is is a test'),
-				!regex.test('nope no match')
+				regex.test('teste teste'),
+				regex.test('Este teste teste'),
+				!regex.test('olá mundo olá'),
+				regex.test('oi oi aí'),
+				regex.test('isto é é um teste'),
+				!regex.test('não nenhuma combinação')
 			].reduce(function (prev, curr) {
-					return prev && curr;
-				}, true);
+				return prev && curr;
+			}, true);
 		},
 
-		lesson24Solution: 'new RegExp(username + \'=(\\\\w+);?\').exec(userData)',
-		lesson24Hint: 'As it is a string, you need to escape your backwards slash.',
+		lesson24Solution: 'new RegExp(usuario + \'=(\\\\w+);?\').exec(dadosUsuarios)',
+		lesson24Hint: 'Como é uma string, precisamos escapar a barra invertida.',
 		lesson24: function (input, output) {
-			if (!contains(input, 'username') || contains(input, 'Bob')) {
+			if (!contains(input, 'usuario') || contains(input, 'Beto')) {
 				return false;
 			}
 
-			return ($.isArray(output) && output[1] === 'happy');
+			return ($.isArray(output) && output[1] === 'feliz');
 		},
 
-		lesson25Solution: 'boldText.replace(/\\*\\*([^*]+)\\*\\*/, \'<strong>$1</strong>\')',
+		lesson25Solution: 'textoNegrito.replace(/\\*\\*([^*]+)\\*\\*/, \'<strong>$1</strong>\')',
 		lesson25: function (input, output) {
 			if (!contains(input, 'replace') || contains(input, '**')) {
 				return false;
 			}
 
-			return output === '<strong>bold text!</strong>';
+			return output === '<strong>texto negrito!</strong>';
 		},
 
-		lesson26Solution: '\'"Hi", "Hello"\'.match(/".+?"/)',
+		lesson26Solution: '\'"Oi", "Olá"\'.match(/".+?"/)',
 		lesson26: function (input, output) {
 			if (!contains(input, '.+?')) {
 				return false;
 			}
 
-			return $.isArray(output) && output[0] === '"Hi"';
+			return $.isArray(output) && output[0] === '"Oi"';
 		},
 
-		lesson27Solution: '/\\d\\+\\d(?==\\d)/.exec(partialSums)',
+		lesson27Solution: '/\\d\\+\\d(?==\\d)/.exec(somasParciais)',
 		lesson27: function (input, output) {
 			if (!contains(input, '(?=') || /\d/.test(input)) {
 				return false;
@@ -333,7 +333,7 @@ define(['jquery', 'console', 'evaluate', 'globalFuncs'], function ($, regexConso
 			return $.isArray(output) && output[0] === '6+3';
 		},
 
-		lesson28Solution: '/\\d\\+\\d(?==)(?!\\d)/.exec(partialSums)',
+		lesson28Solution: '/\\d\\+\\d(?==)(?!\\d)/.exec(somasParciais)',
 		lesson28: function (input, output) {
 			if (!contains(input, ['(?=', '(?!']) || /\d/.test(input)) {
 				return false;

@@ -6,10 +6,10 @@ define(['jquery', 'require'], function ($, require) {
 	// Functions in alphabetical order
 	// Functions are declared globally so that eval can access them.
 
-	window.answer = function (expression) {
+	window.resposta = function (expression) {
 		data.lastAnswer = expression;
 
-		return 'Answer received';
+		return 'Resposta recebida';
 	};
 
 	window.clear = function () {
@@ -20,61 +20,62 @@ define(['jquery', 'require'], function ($, require) {
 
 	window.help = function () {
 		return [
-			'There are a number of useful commands to help you:',
-			'Lesson commands:',
-			'previous() will go back to the previous lesson.',
-			'showAnswer() will give you the answer to the current lesson. ' +
-				'Try to avoid using this!',
-			'Console commands:',
-			'clear() clears the previous commands from the console (or you ' +
-				'can press ctrl+l).',
-			'help() displays this help message.',
-			'info() displays information about Try Regex.',
-			'reset() will clear all the previous commands and return you to ' +
-				'the beginning of the tutorial'
+			'Há uma porção de comandos úteis para ajudá-lo(a):',
+			'Comandos da lição:',
+			'anterior() volta para a lição anterior.',
+			'mostrarResposta() te dá a resposta para a lição atual. ' +
+			'Evite usar isto!',
+			'Comandos do console:',
+			'limpar() limpa os comandos anteriores do console (ou você ' +
+			'pode pressionar ctrl+l).',
+			'help() mostra esta mensagem de ajuda.',
+			'info() mostra informações sobre o Aprenda Regex.',
+			'reiniciar() limpa todos os comandos anteriores e volta ' +
+			'para o início do tutorial'
 		].join('\n\n');
 	};
 
 	window.info = function () {
-		return 'Try Regex is an interactive regular expressions tutorial ' +
-			'written by Callum Macrae. Ask him for help!';
+		return 'Aprenda Regex é um tutorial interativo de expressões regulares ' +
+			'escrito por Callum Macrae e traduzido por Henrique Bispo. ' +
+			'Peça ajuda a eles!';
 	};
 
-	window.previous = function () {
+	window.anterior = function () {
 		require('lessons').previousLesson();
 	};
 
-	window.reset = function () {
+	window.reiniciar = function () {
 		localStorage.removeItem('currentLesson');
 		localStorage.removeItem('codeSoFar');
 
 		setTimeout(location.reload.bind(location), 100);
 
-		return 'Resetting…';
+		return 'Reiniciando…';
 	};
 
-	window.setName = function (name) {
+	window.definirNome = function (name) {
 		if (data.name) {
-			return 'You have already set your name! ' +
-				'Type reset() to start again, if you want.';
+			return 'Você já definiu seu nome! ' +
+				'Digite reiniciar() para começar de novo, se você quiser.';
 		}
 
 		var firstName = name.split(' ')[0];
 
 		if (firstName === 'code') {
-			return 'Your name isn\'t code! Stop it.';
+			return 'Seu nome não é code! Para com isso.';
 		}
 
-		window.bio = 'A developer called ' + firstName + ' is learning regex';
+		window.bio = 'Um(a) programador(a) chamado(a) ' + firstName + ' está aprendendo regex';
 
 		data.name = name;
 		data.firstName = firstName;
 		data.firstEscaped = firstName.replace(/([$()*+.?\[^|\]])/g, '\\$1');
 
-		return 'Hello, ' + name + '!';
+		return 'Olá, ' + name + '!';
 	};
 
-	window.showAnswer = function () {
+	window.mostrarResposta = function () {
 		// Both modules depend on each other; cannot require as dep
 		var answer = require('lessons').getAnswer(),
 			$input = $('.regex-input');
@@ -85,7 +86,7 @@ define(['jquery', 'require'], function ($, require) {
 
 		if (!$input.val()) {
 			$input.val(answer);
-		} else if ($input.val().slice(0, 11) === 'showAnswer(') {
+		} else if ($input.val().slice(0, 11) === 'mostrarResposta(') {
 			// Wait until next cycle or it will be cleared
 			setTimeout(function () {
 				$input.val(answer);
@@ -99,25 +100,25 @@ define(['jquery', 'require'], function ($, require) {
 
 	window.num = '123456';
 
-	window.shortStory = 'A regular expression (also regex or regexp) is a string.';
+	window.historinha = 'Uma expressão regular (também chamada de regex ou regexp) é uma string.';
 
-	window.bracketNumbers = '(123) (123456) (123456789)';
-	window.shorterStory = window.bracketNumbers;
+	window.numerosParenteses = '(123) (123456) (123456789)';
+	window.historinhazinha = window.numerosParenteses;
 
-	window.username = 'BobbyTables';
+	window.usuario = 'BetoTabelas';
 
-	window.charTypeTest = 'Approximately 1920';
+	window.testeDeTipo = 'Aproximadamente 1920';
 
-	window.possibleUrl = 'https://example.com/';
+	window.urlPossivel = 'https://exemplo.com/';
 
-	window.rabbit = 'The rabbit ate';
+	window.coelho = 'O coelho comeu';
 
-	window.userData = 'user1=sad;\nuser2=angry;\n' +
-		window.username + '=happy;\nuser4=crazy';
+	window.dadosUsuarios = 'usuario1=triste;\nusuario2=irritado;\n' +
+		window.username + '=feliz;\nusuario4=louco';
 
-	window.boldText = '**bold text!**';
+	window.textoNegrito = '**texto em negrito!**';
 
-	window.partialSums = '1+1,2+2,3+3=,8+10,10+10+20,6+3=9,5+3';
+	window.somasParciais = '1+1,2+2,3+3=,8+10,10+10+20,6+3=9,5+3';
 
 	return data;
 });

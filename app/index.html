@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Try Regex—an interactive regex tutorial</title>
+	<title>Aprenda Regex—um tutorial interativo de regex</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="assets/js/bower/reset-css/reset.css">
 	<link rel="stylesheet" href="assets/build/style.css">
 
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,700">
 </head>
 <body>
 	<header>
-		<h1>Try Regex</h1>
+		<h1>Aprenda Regex</h1>
 	</header>
 
 	<div class="main">
 		<div class="console">
-			<p class="info">Type some JavaScript here:</p>
+			<p class="info">Digite algum JavaScript aqui:</p>
 			<ul>
 				<li class="input-container"><label>
 					<span class="prompt">&gt; </span>
@@ -26,210 +26,318 @@
 
 		<div class="tutorial">
 			<div class="lesson lesson1">
-				<h2>Getting started with regex</h2>
-				<p>This interactive tutorial serves as an introduction to regular expressions, specifically regular expressions in JavaScript. This will still teach you to write regular expressions that work in other languages, but you should be aware that there are differences.</p>
-				<p>The console to the left is just a JavaScript console. Tell us your name using <code>setName('Your name')</code> (substituting your name in) to get started with the tutorial.</p>
-				<p>There are a number of useful commands: run <code>help()</code> to view them.</p>
+				<!--<h2>Getting started with regex</h2>-->
+				<h2>Começando com o regex</h2>
+				<!--<p>This interactive tutorial serves as an introduction to regular expressions, specifically regular expressions in JavaScript. This will still teach you to write regular expressions that work in other languages, but you should be aware that there are differences.</p>-->
+				<p>Este tutorial interativo serve como introdução às expressões regulares, mais especificamente no JavaScript. Ele ainda vai te ensinar a escrever expressões regulares que funcionam em outras linguagens, mas esteja ciente de que há diferenças.</p>
+				<!--<p>The console to the left is just a JavaScript console. Tell us your name using <code>definirNome('Your name')</code> (substituting your name in) to get started with the tutorial.</p>-->
+				<p>O console à esquerda é apenas um console JavaScript. Diga seu nome usando <code>definirNome('Seu nome')</code></p>
+				<!--<p>There are a number of useful commands: run <code>help()</code> to view them.</p>-->
+				<p>Há uma porção de comandos úteis: rode <code>help()</code> para vê-los.</p>
 			</div>
 
 			<div class="lesson lesson2">
-				<h2>What are regular expressions?</h2>
-				<p>A regular expression (also known as a regex or a regexp) is a string for describing a search pattern—similar to asterisks for wildcard file name matching, but more powerful (and thus more complicated).</p>
-				<p>We'll start with a very basic example so that you can get the hang of the syntax and regular expressions in JavaScript.</p>
-				<p>The <code>bio</code> variable contains a string which may or may not contain your name. To see if it does, type <code>bio.match(/{{ firstEscaped }}/);</code></p>
+				<!--<h2>What are regular expressions?</h2>-->
+				<h2>O que são expressões regulares?</h2>
+				<!--<p>A regular expression (also known as a regex or a regexp) is a string for describing a search pattern—similar to asterisks for wildcard file name matching, but more powerful (and thus more complicated).</p>-->
+				<p>Uma expressão regular (também chamada de regex ou regexp) é uma string que descreve um padrão de busca — similar
+					aos asteriscos usados como coringas para procurar arquivos pelo nome, só que mais poderoso (e portanto mais
+					complicado).</p>
+				<!--<p>We'll start with a very basic example so that you can get the hang of the syntax and regular expressions in JavaScript.</p>-->
+				<p>Vamos começar com um exemplo bem básico pra que tenhamos uma ideia da sintaxe das expressões regulares no JavaScript.</p>
+				<!--<p>The <code>bio</code> variable contains a string which may or may not contain your name. To see if it does, type <code>bio.match(/{{ firstEscaped }}/);</code></p>-->
+				<p>A variável <code>bio</code> contém uma string que pode conter seu nome ou não. Para verificar, digite <code>bio.match(/{{ firstEscaped }}/);</code></p>
 			</div>
 
 			<div class="lesson lesson3">
-				<p>It does!</p>
-				<p>There are a couple things that you can get from the previous example. The first is the syntax used to define regular expressions: you simply surround your expression in forward slashes:</p>
+				<!--<p>It does!</p>-->
+				<p>Contém sim!</p>
+				<!--<p>There are a couple things that you can get from the previous example. The first is the syntax used to define regular expressions: you simply surround your expression in forward slashes:</p>-->
+				<p>Há algumas coisas que podemos ver no exemplo anterior. A primeira é a sintaxe usada para definir expressões regulares: simplesmente colocamos sua expressão entre barras:</p>
 
-				<pre><code>/your expression/</code></pre>
+				<pre><code>/sua expressão/</code></pre>
 
-				<p>If you type that into the console, you'll see that the regular expressions is returned.</p>
-				<p>The second is that you can use the <code>.match()</code> method to test an expression on a string. There are a couple other methods you can call: you can use the <code>.exec()</code> method directly on the regex to execute a string on a regex. Type <code>/{{ firstEscaped }}/.exec(bio)</code>.</p>
+				<!--<p>If you type that into the console, you'll see that the regular expressions is returned.</p>-->
+				<p>Se digitarmos isso no console, veremos que a expressão regular é retornada.</p>
+				<!--<p>The second is that you can use the <code>.match()</code> method to test an expression on a string. There are a couple other methods you can call: you can use the <code>.exec()</code> method directly on the regex to execute a string on a regex. Type <code>/{{ firstEscaped }}/.exec(bio)</code>.</p>-->
+				<p>A segunda coisa é que podemos usar o método <code>.match()</code> para testar uma expressão numa string. Há alguns outros métodos que podemos chamar: podemos usar o método <code>.exec()</code> diretamente no regex para executar uma string num regex. Digite <code>/{{ firstEscaped }}/.exec(bio)</code>.</p>
 			</div>
 
 			<div class="lesson lesson4">
-				<h2>Simple testing</h2>
-				<p>The <code>.exec()</code> method does the same thing as the <code>.match()</code> function, but is called on the expression instead of the string—this can be pretty useful.</p>
-				<p>Another method you can use—and probably the simplest of them all—is the <code>.test()</code> method. It is similar to <code>.exec()</code>, but returns a boolean value. Try it out!</p>
-				<p>Helpful hint: you can use the up arrow on your keyboard to go back to a previous expression.</p>
+				<!--<h2>Simple testing</h2>-->
+				<h2>Testes simples</h2>
+				<!--<p>The <code>.exec()</code> method does the same thing as the <code>.match()</code> function, but is called on the expression instead of the string—this can be pretty useful.</p>-->
+				<p>O método <code>.exec()</code> faz a mesma coisa que a função <code>.match()</code>, porém é chamado na expressão em vez da string — isto pode ser bem útil.</p>
+				<!--<p>Another method you can use—and probably the simplest of them all—is the <code>.test()</code> method. It is similar to <code>.exec()</code>, but returns a boolean value. Try it out!</p>-->
+				<p>Outro método que podemos usar — provavelmente o mais simples de todos — é o <code>.test()</code>. Ele é
+					parecido com o <code>.exec()</code>, mas retorna um valor booleano. Experimente!</p>
+				<!--<p>helpful hint: you can use the up arrow on your keyboard to go back to a previous expression.</p>-->
+				<p>dica: podemos usar a seta pra cima do teclado para voltar a uma expressão anterior.</p>
 			</div>
 
 			<div class="lesson lesson5">
-				<h2>String replacements</h2>
-				<p>The final method we'll be using is the <code>.replace()</code> method of a string to replace a bit of a string with another string. Type the following to hide your name from the <code>bio</code> var:</p>
-				<pre><code>bio.replace(/{{ firstEscaped }}/, '[redacted]')</code></pre>
+				<!--<h2>String replacements</h2>-->
+				<h2>Substituições de string</h2>
+				<!--<p>The final method we'll be using is the <code>.replace()</code> method of a string to replace a bit of a string with another string. Type the following to hide your name from the <code>bio</code> var:</p>-->
+				<p>O último método que vamos utilizar é o <code>.replace()</code> de uma string, para substituir uma parte dela por outra string. Digite o seguinte para esconder seu nome na variável <code>bio</code>:</p>
+				<pre><code>bio.replace(/{{ firstEscaped }}/, '[censurado]')</code></pre>
 			</div>
 
 			<div class="lesson lesson6">
-				<h2>Special characters</h2>
-				<p>None of the expressions we have used so far have been especially interesting, and haven't contained any special characters. The following characters need escaping in regular expressions:</p>
+				<!--<h2>Special characters</h2>-->
+				<h2>Caracteres especiais</h2>
+				<!--<p>None of the expressions we have used so far have been especially interesting, and haven't contained any special characters. The following characters need escaping in regular expressions:</p>-->
+				<p>Nenhuma das expressões que usamos até agora foi especialmente interessante, e nem continham algum caractere especial. Os caracteres a seguir precisam ser escapados em expressões regulares:</p>
 				<pre><code>$()*+.?[^|]</code></pre>
-				<p>To escape them, use a backslash, eg <code>/what\?/</code>.</p>
-				<p>Write an expression to see if the <code>num</code> variable contains the string "3.5".</p>
+				<!--<p>To escape them, use a backslash, eg <code>/what\?/</code>.</p>-->
+				<p>Para escapá-los, utilize uma barra invertida, por exemplo <code>/quê\?/</code>.</p>
+				<!--<p>Write an expression to see if the <code>num</code> variable contains the string "3.5".</p>-->
+				<p>Escreva uma expressão para ver se a variável <code>num</code> contém a string "3.5".</p>
 			</div>
 
 			<div class="lesson lesson7">
-				<h2>The dot operator</h2>
-				<p>It doesn't! <code>num</code> equalled 123456, and so didn't contain the string "3.5".</p>
-				<p>The dot character has a special meaning in regular expressions: it matches any single character except for new line characters (so <code>/a.c/</code> would match "abc", "a c", "a$c", etc). Using <code>/3.5/</code> without escaping the dot <em>would</em> match the string stored in the <code>num</code>, as the dot operator would match the 4.</p>
-				<p>Try it out.</p>
+				<!--<h2>The dot operator</h2>-->
+				<h2>O operador ponto</h2>
+				<!--<p>It doesn't! <code>num</code> equalled 123456, and so didn't contain the string "3.5".</p>-->
+				<p>Não contém não! <code>num</code> era igual a 123456, e portanto não continha a string "3.5".</p>
+				<!--<p>The dot character has a special meaning in regular expressions: it matches any single character except for new line characters (so <code>/a.c/</code> would match "abc", "a c", "a$c", etc). Using <code>/3.5/</code> without escaping the dot <em>would</em> match the string stored in the <code>num</code>, as the dot operator would match the 4.</p>-->
+				<p>O caractere ponto tem um significado especial em expressões regulares: ele combina com qualquer único caractere exceto quebras de linha (então <code>/a.c/</code> combinaria com "abc", "a c", "a$c", etc). Utilizar <code>/3.5/</code> sem escapar o ponto <em>combinaria</em> com a string armazenada em <code>num</code>, já que o operador ponto combinaria com o 4.</p>
+				<!--<p>Try it out.</p>-->
+				<p>Experimente.</p>
 			</div>
 
 			<div class="lesson lesson8">
-				<h2>Quantifiers</h2>
-				<p>There are a number of "quantifiers" that you can use to say how many times something should be matched. The first one is the question mark, which makes the previous token in the expression (the previous character or group of characters) optional.</p>
-				<p>The expression <code>/regexp?/</code> will match both "regex" and "regexp", as the question mark makes the p (but only the p) optional.</p>
-				<p>Write an expression that will match both "frontend" and "front-end", and give it as an argument to the <code>answer()</code> function (eg <code>answer(/your expression/)</code>).</p>
+				<!--<h2>Quantifiers</h2>-->
+				<h2>Quantificadores</h2>
+				<!--<p>There are a number of "quantifiers" that you can use to say how many times something should be matched. The first one is the question mark, which makes the previous token in the expression (the previous character or group of characters) optional.</p>-->
+				<p>Há uma porção de "quantificadores" que podemos utilizar para dizer quantas vezes algo deveria ser combinado. O primeiro é o ponto de interrogação, que torna a parte anterior da expressão (o caractere ou grupo de caracteres anterior) opcional.</p>
+				<!--<p>The expression <code>/regexp?/</code> will match both "regex" and "regexp", as the question mark makes the p (but only the p) optional.</p>-->
+				<p>A expressão <code>/regexp?/</code> vai combinar tanto com "regex" quanto com "regexp", já que o ponto de interrogação faz o p (mas somente o p) opcional.</p>
+				<!--<p>Write an expression that will match both "frontend" and "front-end", and give it as an argument to the <code>answer()</code> function (eg <code>answer(/your expression/)</code>).</p>-->
+				<p>Escreva uma expressão que combine tanto com "frontend" quanto com "front-end" e a coloque como argumento para a função <code>resposta()</code> (por exemplo <code>resposta(/sua expressão/)</code>).</p>
 			</div>
 
 			<div class="lesson lesson9">
-				<h2>The plus sign</h2>
-				<p>The next quantifier we'll be looking at is the plus sign. It means "one or more of the previous token"; <code>/Princes+/</code> will match "Princes", "Princess", "Princesssss", etc. It will not, however, match "Prince".</p>
-				<p>The next expression you need to write is a little trickier. Write a regular expression which extracts everything between the opening and closing parentheses of the <code>shortStory</code> variable (note that you can view the contents of the variable just by typing <code>shortStory</code>). Hint: you'll need the previously mentioned dot operator.</p>
+				<!--<h2>The plus sign</h2>-->
+				<h2>O sinal de mais</h2>
+				<!--<p>The next quantifier we'll be looking at is the plus sign. It means "one or more of the previous token"; <code>/Princes+/</code> will match "Princes", "Princess", "Princesssss", etc. It will not, however, match "Prince".</p>-->
+				<p>O próximo quantificador que veremos é o sinal de mais. Ele significa "um ou mais da parte anterior"; <code>/Irmão+/</code> vai combinar com "Irmão", "Irmãoo", "Irmãooooo", etc. Não vai, porém, combinar com "Irmã".</p>
+				<!--<p>The next expression you need to write is a little trickier. Write a regular expression which extracts everything between the opening and closing parentheses of the <code>shortStory</code> variable (note that you can view the contents of the variable just by typing <code>shortStory</code>). Hint: you'll need the previously mentioned dot operator.</p>-->
+				<p>A próxima expressão que precisamos escrever é um pouco mais complicada. Escreva uma expressão regular que extrai tudo que esteja entre os parênteses da variável <code>historinha</code> (saiba que você pode ver o conteúdo da variável apenas digitando <code>historinha</code>). Dica: você vai precisar do operador ponto, mencionado anteriormente.</p>
 			</div>
 
 			<div class="lesson lesson10">
-				<h2>The asterisk</h2>
-				<p>Similar to the plus sign is the asterisk; but instead of meaning "one or more", the asterisk means "zero or more" of the previous token. <code>/Princes*/</code>, in addition to matching all the examples from <code>/Princes+/</code>, would also match "Prince".</p>
-				<p>Repeat the previous example, but using the asterisk instead of the plus sign. Extract everything from the <code>shortStory</code> variable between the opening and closing parentheses, even if there is nothing there.</p>
+				<!--<h2>The asterisk</h2>-->
+				<h2>O asterisco</h2>
+				<!--<p>Similar to the plus sign is the asterisk; but instead of meaning "one or more", the asterisk means "zero or more" of the previous token. <code>/Princes*/</code>, in addition to matching all the examples from <code>/Princes+/</code>, would also match "Prince".</p>-->
+				<p>Similar ao sinal de mais é o asterisco; mas em vez de significar "um ou mais", o asterisco significa "zero ou mais" da parte anterior. <code>/Irmão*/</code>, além de combinar com todos os exemplos de <code>/Irmão+/</code>, também combinaria com "Irmã".</p>
+				<!--<p>Repeat the previous example, but using the asterisk instead of the plus sign. Extract everything from the <code>shortStory</code> variable between the opening and closing parentheses, even if there is nothing there.</p>-->
+				<p>Repita o exemplo anterior, mas usando o asterisco em vez do sinal de mais. Extraia tudo da variável <code>historinha</code> que esteja entre parênteses, mesmo se não houver nada.</p>
 			</div>
 
 			<div class="lesson lesson11">
-				<h2>Limited repetition</h2>
-				<p>There is one final quantifier that you can use which allows you to limit repetition. The syntax is <code>{min,max}</code> which min is the minimum number of repetitions and max the maximum. For example, <code>/a{3,5}/</code> would match "aaa", "aaaa" and "aaaaa", but nothing else.</p>
-				<p>Write an expression to match the text between an opening and closing parenthesis in the <code>bracketNumbers</code> variable—but only if the contents are between 5 and 8 characters long.</p>
+				<!--<h2>Limited repetition</h2>-->
+				<h2>Repetição limitada</h2>
+				<!--<p>There is one final quantifier that you can use which allows you to limit repetition. The syntax is <code>{min,max}</code> which min is the minimum number of repetitions and max the maximum. For example, <code>/a{3,5}/</code> would match "aaa", "aaaa" and "aaaaa", but nothing else.</p>-->
+				<p>Há um último quantificador que podemos utilizar que nos permite limitar a repetição. A sintaxe é <code>{min,max}</code>, onde min é o número mínimo de repetições e max é o máximo. Por exemplo, <code>/a{3,5}/</code> combinaria com "aaa", "aaaa" e "aaaaa", mas nada além disso.</p>
+				<!--<p>Write an expression to match the text between an opening and closing parenthesis in the <code>bracketNumbers</code> variable—but only if the contents are between 5 and 8 characters long.</p>-->
+				<p>Escreva uma expressão para combinar com o texto entre parênteses na variável <code>numerosParenteses</code> — mas só se este texto tiver entre 5 e 8 caracteres.</p>
 			</div>
 
 			<div class="lesson lesson12">
-				<h2>More limited repetition</h2>
-				<p>In addition to specifying a range of repetitions, you can specify an exact number of repetitions using <code>{n}</code> where n is the number of repetitions. The expression <code>a{6}</code>, for example, will match exactly six repetitions of the letter a.</p>
-				<p>You can leave out the maximum when using curly parentheses, which will match at least <em>minimum</em> values, with no maximum limit. For example, <code>/a{5,}/</code> will match five or more of the letter a.</p>
-				<p>Pass the <code>answer()</code> function the equivalent of <code>/a?b+c*/</code>, but without using any of these characters: <code>?*+</code></p>
+				<!--<h2>More limited repetition</h2>-->
+				<h2>Mais repetição limitada</h2>
+				<!--<p>In addition to specifying a range of repetitions, you can specify an exact number of repetitions using <code>{n}</code> where n is the number of repetitions. The expression <code>a{6}</code>, for example, will match exactly six repetitions of the letter a.</p>-->
+				<p>Além de especificar um escopo de repetições, podemos especificar um número exato de repetições utilizando <code>{n}</code>, onde n é o número de repetições. A expressão <code>a{6}</code>, por exemplo, vai combinar com exatamente seis repetições da letra a.</p>
+				<!--<p>You can leave out the maximum when using curly parentheses, which will match at least <em>minimum</em> values, with no maximum limit. For example, <code>/a{5,}/</code> will match five or more of the letter a.</p>-->
+				<p>Você pode omitir o máximo quanto utilizando chaves, o que vai combinar com pelo menos a quantidade <em>mínima</em>, sem limite máximo. Por exemplo, <code>/a{5,}/</code> vai combinar com cinco ou mais da letra a.</p>
+				<!--<p>Pass the <code>answer()</code> function the equivalent of <code>/a?b+c*/</code>, but without using any of these characters: <code>?*+</code></p>-->
+				<p>Passe para a função <code>resposta()</code> o equivalente de <code>/a?b+c*/</code>, mas sem usar nenhum destes caracteres: <code>?*+</code></p>
 			</div>
 
 			<div class="lesson lesson13">
-				<h2>Flags—the case insensitive flag</h2>
-				<p>Flags are used to modify the behaviour of a regular expression, and they are specified after the expression (eg <code>/your expression/ig</code>). Each flag is represented by a letter, and JavaScript supports four of them—two of which will be covered in this tutorial. The <code>i</code> flag makes the expression case insensitive—while without the flag <code>/a/</code> would match "a" and not "A", <code>/a/i</code> would match both "a" and "A".</p>
-				<p>Run <code>/CAT/i.exec('Category')</code> to see the <code>i</code> flag in action.</p>
+				<!--<h2>Flags—the case insensitive flag</h2>-->
+				<h2>Flags — a flag para não diferenciar maiúsculas e minúsculas</h2>
+				<!--<p>Flags are used to modify the behaviour of a regular expression, and they are specified after the expression (eg <code>/your expression/ig</code>). Each flag is represented by a letter, and JavaScript supports four of them—two of which will be covered in this tutorial. The <code>i</code> flag makes the expression case insensitive—while without the flag <code>/a/</code> would match "a" and not "A", <code>/a/i</code> would match both "a" and "A".</p>-->
+				<p>Flags são utilizadas para modificar o comportamento de uma expressão regular, e são especificadas depois da expressão (ex. <code>/sua expressão/ig</code>). Cada flag é representada poe uma letra, e o JavaScript suporta quatro delas — das quais duas serão vistas neste tutorial. A flag <code>i</code> faz com que a expressão não diferencie maiúsculas e minúsculas — por exemplo <code>/a/</code>, sem esta flag, combinaria com "a" e não com "A", enquanto que <code>/a/i</code> combinaria tanto com "a" quanto com "A".</p>
+				<!--<p>Run <code>/CAT/i.exec('Category')</code> to see the <code>i</code> flag in action.</p>-->
+				<p>Rode <code>/CAT/i.exec('Categoria')</code> para ver a flag <code>i</code> em ação.</p>
 			</div>
 
 			<div class="lesson lesson14">
-				<h2>Flags—The global flag</h2>
-				<p>The second commonly used flag is the global flag, represented by the letter <code>g</code>. While <code>/a/</code> only matches the first a in the string given to it, <code>/a/g</code> would match every single letter a.</p>
-				<p>Write a regular expression to replace every instance of the letter "a" in the <code>shortStory</code> variable with the letter "e".</p>
-				<p>Remember that strings have a <code>.replace(expr, replace)</code> method that you can use for replacements.</p>
+				<!--<h2>Flags—The global flag</h2>-->
+				<h2>Flags — a flag global</h2>
+				<!--<p>The second commonly used flag is the global flag, represented by the letter <code>g</code>. While <code>/a/</code> only matches the first a in the string given to it, <code>/a/g</code> would match every single letter a.</p>-->
+				<p>A segunda flag comumente utilizada é a flag global, representada pela letra <code>g</code>. Enquanto <code>/a/</code> só combina com a primeira letra a na string passada, <code>/a/g</code> combinaria com toda letra a.</p>
+				<!--<p>Write a regular expression to replace every instance of the letter "a" in the <code>shortStory</code> variable with the letter "e".</p>-->
+				<p>Escreva uma expressão regular para substituir toda ocorrência da letra "a" na variável <code>historinha</code> com a letra "e".</p>
+				<!--<p>Remember that strings have a <code>.replace(expr, replace)</code> method that you can use for replacements.</p>-->
+				<p>Lembre-se que as strings possuem um método <code>.replace(expr, sub)</code> que podemos utilizar para substituições.</p>
 			</div>
 
 			<div class="lesson lesson15">
-				<h2>Character classes</h2>
-				<p>Character classes allow you to specify a set or range of characters to be matched. <code>/[aeiou]/</code> matches any vowel, <code>/[a-m]/</code> matches any letter in the first half of the alphabet, and <code>/[aeiou0-9]/</code> matches any vowel or digit.</p>
-				<p>Note that inside a character class, you don't need to escape dots and they will be matched literally. If you want a literal hyphen, however, you will need to escape it.</p>
-				<p>We're given a string which should contain a username consisting of 5 to 12 letters (uppercase or lowercase) or hyphens. Write some code that will <strong>return true</strong> if the <code>username</code> variable contains a valid username.</p>
+				<!--<h2>Character classes</h2>-->
+				<h2>Classes de caracteres</h2>
+				<!--<p>Character classes allow you to specify a set or range of characters to be matched. <code>/[aeiou]/</code> matches any vowel, <code>/[a-m]/</code> matches any letter in the first half of the alphabet, and <code>/[aeiou0-9]/</code> matches any vowel or digit.</p>-->
+				<p>Classes de caracteres permitem que especifiquemos um conjunto ou escopo de caracteres com os quais combinar. <code>/[aeiou]/</code> combina com qualquer vogal, <code>/[a-m]/</code> combina com qualquer letra na primeira metade do alfabeto, e <code>/[aeiou0-9]/</code> combina com qualquer vogal ou dígito.</p>
+				<!--<p>Note that inside a character class, you don't need to escape dots and they will be matched literally. If you want a literal hyphen, however, you will need to escape it.</p>-->
+				<p>Saiba que, dentro de uma classe de caracteres, não precisamos escapar pontos e eles serão combinados literalmente. Se quisermos um hífen literal, porém, precisaremos escapá-lo.</p>
+				<!--<p>We're given a string which should contain a username consisting of 5 to 12 letters (uppercase or lowercase) or hyphens. Write some code that will <strong>return true</strong> if the <code>username</code> variable contains a valid username.</p>-->
+				<p>É passada para nós uma string que deveria conter um nome de usuário de 5 a 12 letras (maiúsculas ou minúsculas) ou hífens. Escreva um código que <strong>retorne true</strong> se a variável <code>usuario</code> contém um usuário válido.</p>
 			</div>
 
 			<div class="lesson lesson16">
+				<!--<h2>Negated character classes</h2>-->
 				<h2>Negated character classes</h2>
+				<!--<p>A <em>negated</em> character class will match any character that <em>isn't</em> in the character class. You negate a character class by putting a caret character (^) at the beginning of the class. For example, <code>/[^a-m]/</code> will match "z" and "$", but it will not match "c".</p>-->
 				<p>A <em>negated</em> character class will match any character that <em>isn't</em> in the character class. You negate a character class by putting a caret character (^) at the beginning of the class. For example, <code>/[^a-m]/</code> will match "z" and "$", but it will not match "c".</p>
+				<!--<p>It's important to note the distinction between "not [a-m]" and "something that isn't [a-m]". <code>/c[^a]t/</code> will match "cut", but it won't match "cat" and it won't match "ct"—this is important.</p>-->
 				<p>It's important to note the distinction between "not [a-m]" and "something that isn't [a-m]". <code>/c[^a]t/</code> will match "cut", but it won't match "cat" and it won't match "ct"—this is important.</p>
+				<!--<p>The username can now contain any character that isn't a space (but still has to be between 5 and 12 characters long). Write a new expression to validate the <code>username</code> variable.</p>-->
 				<p>The username can now contain any character that isn't a space (but still has to be between 5 and 12 characters long). Write a new expression to validate the <code>username</code> variable.</p>
 			</div>
 
 			<div class="lesson lesson17">
+				<!--<h2>Character types</h2>-->
 				<h2>Character types</h2>
+				<!--<p>Character types can be used as shorthand for common character classes. There are six character types: <code>\d</code> matches decimal digits (0-9), <code>\s</code> matches whitespace characters, and <code>\w</code> matches word characters (letters—including international characters—numbers and the underscore).</p>-->
 				<p>Character types can be used as shorthand for common character classes. There are six character types: <code>\d</code> matches decimal digits (0-9), <code>\s</code> matches whitespace characters, and <code>\w</code> matches word characters (letters—including international characters—numbers and the underscore).</p>
+				<!--<p>The other three character types can be found by capitalising the first three character types, which will negate their effect; <code>\S</code> while match any non-whitespace character, for example.</p>-->
 				<p>The other three character types can be found by capitalising the first three character types, which will negate their effect; <code>\S</code> while match any non-whitespace character, for example.</p>
+				<!--<p>Write an expression to match a word, followed by a space, followed by a string of digits. Test the <code>charTypeTest</code> variable with it: don't use any literal characters.</p>-->
 				<p>Write an expression to match a word, followed by a space, followed by a string of digits. Test the <code>charTypeTest</code> variable with it: don't use any literal characters.</p>
 			</div>
 
 			<div class="lesson lesson18">
+				<!--<h2>Positions</h2>-->
 				<h2>Positions</h2>
+				<!--<p>If you want to make sure that an expression starts or ends at a certain place in a word—for example, if you want to make sure that a string starts with a capital letter—then you can use an anchor. The dollar sign matches the end of a string, and the caret sign (^) matches the beginning. <code>/^cat$/</code> will match "cat" and nothing else (while just <code>/cat/</code> will match anything with "cat" in.</p>-->
 				<p>If you want to make sure that an expression starts or ends at a certain place in a word—for example, if you want to make sure that a string starts with a capital letter—then you can use an anchor. The dollar sign matches the end of a string, and the caret sign (^) matches the beginning. <code>/^cat$/</code> will match "cat" and nothing else (while just <code>/cat/</code> will match anything with "cat" in.</p>
+				<!--<p>Write an expression to test whether the <code>possibleUrl</code> variable starts with "http://" or "https://" and then doesn't contain any spaces all the way to the end.</p>-->
 				<p>Write an expression to test whether the <code>possibleUrl</code> variable starts with "http://" or "https://" and then doesn't contain any spaces all the way to the end.</p>
+				<!--<p>Hint: Use a question mark for the protocol, and then a negated character class for the rest. You'll need both anchors.</p>-->
 				<p>Hint: Use a question mark for the protocol, and then a negated character class for the rest. You'll need both anchors.</p>
 			</div>
 
 			<div class="lesson lesson19">
+				<!--<h2>Capturing groups</h2>-->
 				<h2>Capturing groups</h2>
+				<!--<p>You can use parentheses to create groups, which can group multiple tokens together or store a result for later reference:</p>-->
 				<p>You can use parentheses to create groups, which can group multiple tokens together or store a result for later reference:</p>
 				<pre><code>/"(.+)"/</code></pre>
+				<!--<p>That's an example of a capturing group, meaning that the part of the matched string within the parentheses is saved to a later point in the array returned by <code>.match()</code> or <code>.exec()</code>.</p>-->
 				<p>That's an example of a capturing group, meaning that the part of the matched string within the parentheses is saved to a later point in the array returned by <code>.match()</code> or <code>.exec()</code>.</p>
 
+				<!--<p>Take our previous example where we grabbed the data between two parentheses using an expression like <code>/\(.{5,8}\)/.exec(shorterStory)</code>. Try running that again, and then wrapping "<code>.{5,8}</code>" in parentheses and trying again.</p>-->
 				<p>Take our previous example where we grabbed the data between two parentheses using an expression like <code>/\(.{5,8}\)/.exec(shorterStory)</code>. Try running that again, and then wrapping "<code>.{5,8}</code>" in parentheses and trying again.</p>
 			</div>
 
 			<div class="lesson lesson20">
+				<!--<h2>Non-capturing groups</h2>-->
 				<h2>Non-capturing groups</h2>
+				<!--<p>You can see that the array is now two items long: the first item is the entire match, and the second is only the data that the capturing group matched.</p>-->
 				<p>You can see that the array is now two items long: the first item is the entire match, and the second is only the data that the capturing group matched.</p>
+				<!--<p>There is another type of group called a non-capturing group. This type of group, which has a slightly different syntax, doesn't store the value to an array. If you don't need to refer back to the group, you should prefer a non-capturing group: it keeps the return array cleaner. Turn the group in the previous expression into a non-capturing group by inserting "<code>?:</code>" into the beginning of the group before the dot.</p>-->
 				<p>There is another type of group called a non-capturing group. This type of group, which has a slightly different syntax, doesn't store the value to an array. If you don't need to refer back to the group, you should prefer a non-capturing group: it keeps the return array cleaner. Turn the group in the previous expression into a non-capturing group by inserting "<code>?:</code>" into the beginning of the group before the dot.</p>
 			</div>
 
 			<div class="lesson lesson21">
+				<!--<h2>Quantifiers</h2>-->
 				<h2>Quantifiers</h2>
+				<!--<p>It's almost as if we don't have a group.</p>-->
 				<p>It's almost as if we don't have a group.</p>
+				<!--<p>The main use of non-capturing groups is to apply a quantifier to a number of tokens. The following would match "I ate" and "{{ firstName }} and I ate", but nothing else:</p>-->
 				<p>The main use of non-capturing groups is to apply a quantifier to a number of tokens. The following would match "I ate" and "{{ firstName }} and I ate", but nothing else:</p>
 				<pre><code>/^(?:{{ firstEscaped }} and )?I ate$/</code></pre>
+				<!--<p>Write an expression which matches "ha" repeated two or more times (eg, "haha" or "hahahahaha"), and pass it the <code>answer()</code> function.</p>-->
 				<p>Write an expression which matches "ha" repeated two or more times (eg, "haha" or "hahahahaha"), and pass it the <code>answer()</code> function.</p>
+				<!--<p>Hint: your expression shouldn't match "hahah". Use anchors to ensure that it doesn't.</p>-->
 				<p>Hint: your expression shouldn't match "hahah". Use anchors to ensure that it doesn't.</p>
 			</div>
 
 			<div class="lesson lesson22">
+				<!--<h2>The pipe symbol</h2>-->
 				<h2>The pipe symbol</h2>
+				<!--<p>You can specify an "or" using the pipe symbol (|). The following will match "The dog ate" and "The cat ate":</p>-->
 				<p>You can specify an "or" using the pipe symbol (|). The following will match "The dog ate" and "The cat ate":</p>
 				<pre><code>/The (dog|cat) ate/</code></pre>
+				<!--<p>We could also use a non-capturing group, but in this case we wanted to access the result. You can use as many pipes in one group as you want. Make the previous expression match "The rabbit ate" (currently stored in the <code>rabbit</code> variable), in addition to what it used to match.</p>-->
 				<p>We could also use a non-capturing group, but in this case we wanted to access the result. You can use as many pipes in one group as you want. Make the previous expression match "The rabbit ate" (currently stored in the <code>rabbit</code> variable), in addition to what it used to match.</p>
 			</div>
 
 			<div class="lesson lesson23">
+				<!--<h2>Backreferences</h2>-->
 				<h2>Backreferences</h2>
+				<!--<p>You can reference the value of a previous capturing group later within the same expression. You simply write a backslash followed by the number of the capturing group (the index of where it will be in the returned array). For example, the following will match "The cat ate with the other cat" and "The dog ate with the other dog", but not "the cat ate with the other dog" (after all, that would just be absurd):</p>-->
 				<p>You can reference the value of a previous capturing group later within the same expression. You simply write a backslash followed by the number of the capturing group (the index of where it will be in the returned array). For example, the following will match "The cat ate with the other cat" and "The dog ate with the other dog", but not "the cat ate with the other dog" (after all, that would just be absurd):</p>
 				<pre><code>/The (dog|cat) ate with the other \1/</code></pre>
+				<!--<p>Write an expression to match the same two words in a row (eg "hello hello world"): give the expression to the <code>answer()</code> function as in previous examples.</p>-->
 				<p>Write an expression to match the same two words in a row (eg "hello hello world"): give the expression to the <code>answer()</code> function as in previous examples.</p>
 			</div>
 
 			<div class="lesson lesson24">
+				<!--<h2>The RegExp object</h2>-->
 				<h2>The RegExp object</h2>
+				<!--<p>In addition to the literal operator (the slashes), JavaScript provides a RegExp constructor which allows you to specify your desired expression as a string. This is useful for putting variable in expressions. It works like this:</p>-->
 				<p>In addition to the literal operator (the slashes), JavaScript provides a RegExp constructor which allows you to specify your desired expression as a string. This is useful for putting variable in expressions. It works like this:</p>
 				<pre><code>// Same as /regexp?/ig
 new RegExp('regexp?', 'ig');</code></pre>
+				<!--<p>The username contains a variable (still). The <code>userData</code> variable contains user data: print it to the console to see the format of the data. Use the <code>username</code> variable to extract the word associated with our user. Please put your entire answer on one line so that it can be validated.</p>-->
 				<p>The username contains a variable (still). The <code>userData</code> variable contains user data: print it to the console to see the format of the data. Use the <code>username</code> variable to extract the word associated with our user. Please put your entire answer on one line so that it can be validated.</p>
 			</div>
 
 			<div class="lesson lesson25">
+				<!--<h2>Advanced replacement</h2>-->
 				<h2>Advanced replacement</h2>
+				<!--<p>We've seen two ways in which capturing groups can have their captured value used later on: the first was the returned array, and the second was in a backreference. You can also access them from the second argument of the string <code>.replace()</code> method:</p>-->
 				<p>We've seen two ways in which capturing groups can have their captured value used later on: the first was the returned array, and the second was in a backreference. You can also access them from the second argument of the string <code>.replace()</code> method:</p>
 				<pre><code>var text = '*italic text*';
 var replace = '&lt;em&gt;$1&lt;/em&gt;';
 text.replace(/\*([^*]+)\*/, replace);</code></pre>
+				<!--<p>Write some similar code, but to turn the value of the <code>boldText</code> variable into a <code>&lt;strong&gt;</code> element.</p>-->
 				<p>Write some similar code, but to turn the value of the <code>boldText</code> variable into a <code>&lt;strong&gt;</code> element.</p>
 			</div>
 
 			<div class="lesson lesson26">
+				<!--<h2>Lazy vs greedy matching</h2>-->
 				<h2>Lazy vs greedy matching</h2>
+				<!--<p>By default, pattern matching in JavaScript is "greedy", which means that it matches as much as it possibly can:</p>-->
 				<p>By default, pattern matching in JavaScript is "greedy", which means that it matches as much as it possibly can:</p>
 				<pre><code>'"Hi", "Hello"'.match(/".+"/)</code></pre>
+				<!--<p>That will return <code>"Hi", "Hello"</code>, as it matches the two outermost quotes. Lazy pattern matching is the opposite of greedy pattern matching, and will match as little as possible—so in this case, only <code>"Hi"</code>.</p>-->
 				<p>That will return <code>"Hi", "Hello"</code>, as it matches the two outermost quotes. Lazy pattern matching is the opposite of greedy pattern matching, and will match as little as possible—so in this case, only <code>"Hi"</code>.</p>
+				<!--<p>Lazy pattern matching can be achieved by putting a question mark after the quantifier—try it out with the example above.</p>-->
 				<p>Lazy pattern matching can be achieved by putting a question mark after the quantifier—try it out with the example above.</p>
 			</div>
 
 			<div class="lesson lesson27">
+				<!--<h2>Assertions</h2>-->
 				<h2>Assertions</h2>
+				<!--<p>An assertion is a pattern that should be matched, but will not be stored: so instead of "match a and then b", we have "match a that is followed by b, but don't match b". There are two types of assertion supported in JavaScript, positive lookaheads and negative lookaheads. Lookaheads just means looking forwards; JavaScript doesn't support lookbehinds.</p>-->
 				<p>An assertion is a pattern that should be matched, but will not be stored: so instead of "match a and then b", we have "match a that is followed by b, but don't match b". There are two types of assertion supported in JavaScript, positive lookaheads and negative lookaheads. Lookaheads just means looking forwards; JavaScript doesn't support lookbehinds.</p>
+				<!--<p>A positive lookahead means that we want to look ahead for a match. To look for an a followed by a b, we could use <code>/a(?=b)/</code>.</p>-->
 				<p>A positive lookahead means that we want to look ahead for a match. To look for an a followed by a b, we could use <code>/a(?=b)/</code>.</p>
+				<!--<p>Use an assertion to extract "6+3" from the <code>partialSums</code> variable. Don't use any literal digits, use <code>\d</code>.</p>-->
 				<p>Use an assertion to extract "6+3" from the <code>partialSums</code> variable. Don't use any literal digits, use <code>\d</code>.</p>
 			</div>
 
 			<div class="lesson lesson28">
+				<!--<h2>Negative assertions</h2>-->
 				<h2>Negative assertions</h2>
+				<!--<p>Assertions can also be negative, to say that you want to match something that <em>isn't</em> followed by something. Note that unlike a character class, this can match something that isn't that—if you say "a that isn't followed by b", the a can be at the end of the string.</p>-->
 				<p>Assertions can also be negative, to say that you want to match something that <em>isn't</em> followed by something. Note that unlike a character class, this can match something that isn't that—if you say "a that isn't followed by b", the a can be at the end of the string.</p>
+				<!--<p>The syntax for a negative assertion is similar to that of a positive assertion, but you replace the equals sign with an exclamation mark: for example, <code>/a(?!b)/</code> would find a letter a that isn't followed by a letter b.</p>-->
 				<p>The syntax for a negative assertion is similar to that of a positive assertion, but you replace the equals sign with an exclamation mark: for example, <code>/a(?!b)/</code> would find a letter a that isn't followed by a letter b.</p>
+				<!--<p>Use a positive assertion followed by a negative assertion to extract "3+3" from the <code>partialSums</code> variable.</p>-->
 				<p>Use a positive assertion followed by a negative assertion to extract "3+3" from the <code>partialSums</code> variable.</p>
 			</div>
 
 			<div class="lesson lesson29">
+				<!--<h2>You have finished!</h2>-->
 				<h2>You have finished!</h2>
+				<!--<p>Congratulations, {{ firstName }}, on finishing Try Regex. You've now briefly covered most areas of regular expressions in JavaScript, and you should be able to write regex for most situations.</p>-->
 				<p>Congratulations, {{ firstName }}, on finishing Try Regex. You've now briefly covered most areas of regular expressions in JavaScript, and you should be able to write regex for most situations.</p>
+				<!--<p>For further reading, try out the following links:</p>-->
 				<p>For further reading, try out the following links:</p>
 
 				<ul>
@@ -244,10 +352,13 @@ text.replace(/\*([^*]+)\*/, replace);</code></pre>
 	</div>
 
 	<footer>
-		<p>Site by <a href="http://macr.ae/">Callum Macrae</a>. <small>Copyright &copy; 2014</small></p>
+		<!--<p>Site by <a href="http://macr.ae/">Callum Macrae</a>. <small>Copyright &copy; 2014</small></p>-->
+				<p>Site by <a href="http://macr.ae/">Callum Macrae</a>. <small>Copyright &copy; 2014</small></p>
+		<!--<p>Tradução por <a href="http://github.com/hbispo">Henrique Bispo</a>. <small>Copyright &copy; 2020</small></p>-->
+				<p>Tradução por <a href="http://github.com/hbispo">Henrique Bispo</a>.</p>
 	</footer>
 
-	<a class="gh-ribbon" href="https://github.com/callumacrae/tryregex"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+	<a class="gh-ribbon" href="https://github.com/hbispo/tryregex"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
 	<!-- This div is always hidden; it's for cloning from -->
 	<div class="hidden-storage">

@@ -1,25 +1,25 @@
-# Try Regex
+# Aprenda Regex
 
-Try Regex is an interactive regular expressions tutorial inspired by [Try Ruby](http://tryruby.org/) and [Try Haskell](http://tryhaskell.org/). Check it out at <http://tryregex.com/>.
+O Aprenda Regex é um tutorial interativo de expressões regulares traduzido do [Try Regex](http://tryregex.com/), que foi inspirado pelo [Try Ruby](http://tryruby.org/) e [Try Haskell](http://tryhaskell.org/). Confira em <https://gaia.blockstack.org/hub/14hc2iL6BKgdVpJh7FBssFRsZWM1iffiHZ/experimenteregex/1.0/index.html>.
 
-This project was conceived at the [HackKing's Hackathon](http://www.hackkings.org/) in London.
+O projeto original, Try Regex, foi concebido na [HackKing's Hackathon](http://www.hackkings.org/) in London.
 
-## Installing
+## Instalando
 
-Try Regex uses [gulp](http://gulpjs.com/) for building and other development tools, and [bower](http://bower.io/) for package management. To install, run the following:
+O Aprenda Regex utiliza o [gulp](http://gulpjs.com/) para as builds e outras ferramentas de desenvolvimento, e o [bower](http://bower.io/) para gerenciar pacotes. Para instalar, rode os seguintes comandos:
 
 ```
 npm install
 bower install
 ```
 
-You will need Node (>= 0.9), npm and bower to be installed.
+É necessário que o Node (>= 0.9), o npm e o bower estejam instalados.
 
-## Running
+## Rodando
 
-It's static HTML, you don't need anything special to serve the files. However, gulp adds a number of tools which make it easier during development. You can run `gulp build` to turn the LESS code into CSS, you can use `gulp lint` to lint your code, and you can use `gulp` to run [browser-sync](http://browsersync.io/) and a LESS watcher to compile and inject changes as they're made.
+É HTML estático, então você não precisa de nada especial para servir os arquivos. Entretanto, o gulp adiciona um tanto de ferramentas que torna tudo mais fácil durante o desenvolvimento. Você pode rodar `gulp build` para transformar o código LESS em CSS, você pode usar `gulp lint` para lintar o seu código, e você pode usar o `gulp` para rodar o [browser-sync](http://browsersync.io/) e um monitor de LESS para compilar e injetar mudanças conforme elas são feitas.
 
 
-## License
+## Licença
 
-Try Regex is released under the MIT license.
+O Aprenda Regex é distribuído sob a licença MIT.
